@@ -21,7 +21,7 @@ jobs:
     - name: Install azureml cli extension
       run: az extension add --source https://azuremlsdktestpypi.blob.core.windows.net/wheels/sdk-cli-v2/ml-0.0.15_october_cand-py3-none-any.whl --yes
       #run: az extension add -n ml -y
-    - name: create azureml workspace if it does not exist
+    - name: Create azureml workspace if it does not exist
       run: az ml workspace create -n ${{secrets.AML_WORKSPACE}} --location ${{secrets.LOCATION}}
       continue-on-error: true
     - name: "Create Log Analytics workspace (if it does not exist)"
@@ -29,6 +29,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2.3.3
     - name: Create dataset
-      run: az ml dataset create -n credit-dataset --local-path dataset/german_credit_data.csv
-    - name: create training cluster
+      run: az ml dataset create -n credit-dataset -l dataset/german_credit_data.csv
+    - name: Create training cluster
       run: az ml compute create -n ${{ env.TRAINING_CLUSTER }} --type amlcompute --min-instances 0 --max-instances 5
