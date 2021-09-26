@@ -31,7 +31,7 @@ jobs:
       run: |
         export TRAINING_JOB=${{ env.TRAINING_JOB_PREFIX }}-`echo $RANDOM`
         # run the training job
-        az ml job create -f train/job.yml -n $TRAINING_JOB
+        az ml job create -f train/job.yml -n $TRAINING_JOB -s
         echo "TRAINING_JOB=$TRAINING_JOB" >> $GITHUB_ENV
 
     - name: Register model
