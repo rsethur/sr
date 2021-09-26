@@ -3,7 +3,7 @@ on:
   workflow_dispatch
 
 env:
-  TRAINING_CLUSTER: cpucluster
+  TRAINING_CLUSTER: cpu-cluster
 
 jobs:  
   setup:
