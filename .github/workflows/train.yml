@@ -3,7 +3,7 @@ on:
   workflow_dispatch
 
 env:
-  TRAINING_JOB_NAME: risk-model-job
+  TRAINING_JOB_PREFIX: risk-model-job
   MODEL_NAME: risk-model #registered registration model name
   MODEL_FILE_PATH: outputs/risk_model.joblib #output file from training script
 
@@ -29,9 +29,10 @@ jobs:
 
     - name: Run training job
       run: |
-        export TRAINING_JOB=risk-model-job-`echo $RANDOM`
+        export TRAINING_JOB=${{ env.TRAINING_JOB_PREFIX }}-`echo $RANDOM`
         # run the training job
         az ml job create -f train/job.yml -n $TRAINING_JOB
+        echo "::set-env name=TRAINING_JOB::$TRAINING_JOB"
 
     - name: Register model
       run: |
