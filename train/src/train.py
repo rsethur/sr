@@ -24,7 +24,7 @@ def main():
 
     #copying to "outputs" directory, automatically uploads it to azure ml
     output_dir = './outputs/'
-    model_name = "aaarisk_model.joblib"
+    model_name = "risk_model.joblib"
     os.makedirs(output_dir, exist_ok=True)
     joblib.dump(value=clf, filename=output_dir+model_name)
 

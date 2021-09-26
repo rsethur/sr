@@ -1,0 +1,49 @@
+name: train
+on: 
+  workflow_dispatch
+
+env:
+  TRAINING_CLUSTER: cpucluster  
+  TRAINING_JOB_NAME: risk-model-job
+  MODEL_NAME: risk-model #registered registration model name
+  MODEL_FILE_PATH: outputs/risk_model.joblib #output file from training script
+
+jobs:  
+  setup:
+    name: setup
+    runs-on: ubuntu-latest
+    steps:
+    - name: azure login
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+    - run: |
+          az config set defaults.workspace=${{secrets.AML_WORKSPACE}}
+          az config set defaults.group=${{secrets.RESOURCE_GROUP}}          
+          az account set -s ${{secrets.SUBSCRIPTION_ID}}  
+    
+    - name: Install azureml cli extension
+      run: az extension add --source https://azuremlsdktestpypi.blob.core.windows.net/wheels/sdk-cli-v2/ml-0.0.15_october_cand-py3-none-any.whl --yes
+      #run: az extension add -n ml -y
+    
+    - name: Run training job
+      run: |
+        export TRAINING_JOB=risk-model-job-`echo $RANDOM`
+        # run the training job
+        az ml job create -f train/job.yml -n $TRAINING_JOB
+
+    - name: Register model
+      run: |
+        # download the job output
+        az ml job download -n $TRAINING_JOB -p run-outputs
+        # register model
+        MODEL_VERSION=$(az ml model create -n ${{ env.MODEL_NAME }} -l run-outputs/$TRAINING_JOB/${{ env.MODMODEL_FILE_PATHL_NAME }} | jq -r .version)
+        #write model name and version to file
+        export MODEL_NAME_WITH_VERSION=azureml:${{ env.MODEL_NAME }}:$LATEST_MODEL_VERSION
+        echo $MODEL_NAME_WITH_VERSION > latest-model.txt
+    
+    - name: Update model verion in artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: latest-model
+        path: latest-model.txt
