@@ -8,8 +8,7 @@ env:
   MODEL_FILE_PATH: outputs/risk_model.joblib #output file from training script
 
 jobs:  
-  setup:
-    name: setup
+  train:
     runs-on: ubuntu-latest
     steps:
     - name: azure login
@@ -44,7 +43,7 @@ jobs:
         export MODEL_NAME_WITH_VERSION=azureml:${{ env.MODEL_NAME }}:$LATEST_MODEL_VERSION
         echo $MODEL_NAME_WITH_VERSION > latest-model.txt
     
-    - name: Update model verion in artifact
+    - name: Update model verion as artifact
       uses: actions/upload-artifact@v2
       with:
         name: latest-model
