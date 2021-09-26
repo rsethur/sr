@@ -19,7 +19,7 @@ jobs:
       run: az extension add --source https://azuremlsdktestpypi.blob.core.windows.net/wheels/sdk-cli-v2/ml-0.0.15_october_cand-py3-none-any.whl --yes
       #run: az extension add -n ml -y
     - name: create azureml workspace if it does not exist
-    - run: az ml workspace create -n ${{secrets.AML_WORKSPACE}} --location ${{secrets.LOCATION}}
+      run: az ml workspace create -n ${{secrets.AML_WORKSPACE}} --location ${{secrets.LOCATION}}
     - name: Checkout
       uses: actions/checkout@v2.3.3
     - name: Setup Python
