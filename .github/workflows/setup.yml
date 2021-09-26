@@ -3,7 +3,7 @@ on:
   workflow_dispatch
 
 env:
-  TRAINING_CLUSTER: cpu-cluster
+  TRAINING_CLUSTER: cpu-cluster # this name is used in train/job.yaml as well
 
 jobs:  
   setup:

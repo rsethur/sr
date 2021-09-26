@@ -3,7 +3,6 @@ on:
   workflow_dispatch
 
 env:
-  TRAINING_CLUSTER: cpucluster  
   TRAINING_JOB_NAME: risk-model-job
   MODEL_NAME: risk-model #registered registration model name
   MODEL_FILE_PATH: outputs/risk_model.joblib #output file from training script
