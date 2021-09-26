@@ -2,6 +2,9 @@ name: setup
 on: 
   workflow_dispatch
 
+env:
+  TRAINING_CLUSTER: cpucluster
+
 jobs:  
   setup:
     name: setup
@@ -21,15 +24,11 @@ jobs:
     - name: create azureml workspace if it does not exist
       run: az ml workspace create -n ${{secrets.AML_WORKSPACE}} --location ${{secrets.LOCATION}}
       continue-on-error: true
-    - name: Checkout
-      uses: actions/checkout@v2.3.3
-    - name: Setup Python
-      uses: actions/setup-python@v2.1.4
-      with:
-        python-version: 3.7    
     - name: "Create Log Analytics workspace (if it does not exist)"
       run: az monitor log-analytics workspace create --workspace-name ${{secrets.LA_WORKSPACE}} --location ${{secrets.LA_LOCATION}} --retention-time 730  --sku pergb2018 
+    - name: Checkout
+      uses: actions/checkout@v2.3.3
     - name: Create dataset
-      run: az ml dataset create -n credit-dataset -v 1 --datastore-name workspaceblobstore -l dataset/german_credit_data.csv
+      run: az ml dataset create -n credit-dataset -v 1 --local-path dataset/german_credit_data.csv
     - name: create training cluster
-      run: az ml compute create -n cpu-cluster --type amlcompute --min-instances 0 --max-instances 5
+      run: az ml compute create -n ${{ env.TRAINING_CLUSTER }} --type amlcompute --min-instances 0 --max-instances 5
