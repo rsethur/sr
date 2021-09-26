@@ -28,7 +28,7 @@ jobs:
       with:
         python-version: 3.7    
     - name: "Create Log Analytics workspace (if it does not exist)"
-      run: az monitor log-analytics workspace create --workspace-name ${{secrets.LA_WORKSPACE}}  --retention-time 730 --location ${{secrets.LA_LOCATION}} --sku pergb2018 
+      run: az monitor log-analytics workspace create --workspace-name ${{secrets.LA_WORKSPACE}} --location ${{secrets.LA_LOCATION}} --retention-time 730  --sku pergb2018 
     - name: Create dataset
       run: az ml dataset create -n credit-dataset -v 1 --datastore-name workspaceblobstore -l dataset/german_credit_data.csv
     - name: create training cluster
