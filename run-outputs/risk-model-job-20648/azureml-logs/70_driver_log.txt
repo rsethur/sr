@@ -1,0 +1,35 @@
+2021/09/18 01:43:08 Starting App Insight Logger for task:  runTaskLet
+2021/09/18 01:43:08 Version: 3.0.01719.0004 Branch: .SourceBranch Commit: a462f58
+2021/09/18 01:43:08 Attempt 1 of http call to http://10.0.0.6:16384/sendlogstoartifacts/info
+2021/09/18 01:43:08 Send process info logs to master server succeeded
+2021/09/18 01:43:08 Attempt 1 of http call to http://10.0.0.6:16384/sendlogstoartifacts/status
+2021/09/18 01:43:08 Send process info logs to master server succeeded
+[2021-09-18T01:43:08.419432] Entering context manager injector.
+[2021-09-18T01:43:08.931771] context_manager_injector.py Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError', 'UserExceptions:context_managers.UserExceptions'], invocation=['python train.py --dataset azureml:credit-dataset:1'])
+Script type = COMMAND
+[2021-09-18T01:43:08.936384] Command=python train.py --dataset azureml:credit-dataset:1
+[2021-09-18T01:43:08.936652] Entering Run History Context Manager.
+[2021-09-18T01:43:10.636365] Command Working Directory=/mnt/batch/tasks/shared/LS_root/jobs/canaryws/f329699ec18a4bf4955e8b6a7c88a9a4/risk-model-job-20648/wd/azureml/risk-model-job-20648
+[2021-09-18T01:43:10.636422] Starting Linux command : python train.py --dataset azureml:credit-dataset:1
+training accuracy: 0.745
+test data accuracy: 0.735
+[2021-09-18T01:43:12.047547] Command finished with return code 0
+
+
+[2021-09-18T01:43:12.047982] The experiment completed successfully. Finalizing run...
+Cleaning up all outstanding Run operations, waiting 900.0 seconds
+1 items cleaning up...
+Cleanup took 0.05528712272644043 seconds
+[2021-09-18T01:43:12.263444] Finished context manager injector.
+2021/09/18 01:43:13 Not exporting to RunHistory as the exporter is either stopped or there is no data.
+Stopped: false
+OriginalData: 1
+FilteredData: 0.
+2021/09/18 01:43:13 Attempt 1 of http call to http://10.0.0.6:16384/sendlogstoartifacts/status
+2021/09/18 01:43:13 Send process info logs to master server succeeded
+2021/09/18 01:43:13 Not exporting to RunHistory as the exporter is either stopped or there is no data.
+Stopped: false
+OriginalData: 2
+FilteredData: 0.
+2021/09/18 01:43:13 Process Exiting with Code:  0
+2021/09/18 01:43:13 All App Insights Logs was sent successfully or the close timeout of 10 was reached

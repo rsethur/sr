@@ -1,0 +1,379 @@
+2021-09-18T01:11:07Z Running following command: /bin/bash -c sudo blobfuse /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/mounts/workspaceblobstore --tmp-path=/mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/caches/workspaceblobstore -o ro --file-cache-timeout-in-seconds=1000000 --cache-size-mb=92215 -o nonempty -o allow_other --config-file=/mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/configs/workspaceblobstore.cfg --log-level=LOG_WARNING
+2021-09-18T01:11:07Z Successfully mounted a/an Blobfuse File System at /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/mounts/workspaceblobstore
+2021-09-18T01:11:07Z The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+2021-09-18T01:11:07Z Starting output-watcher...
+2021-09-18T01:11:07Z IsDedicatedCompute == True, won't poll for Low Pri Preemption
+2021-09-18T01:11:08Z Executing 'Copy ACR Details file' on 10.0.0.6
+2021-09-18T01:11:08Z Copy ACR Details file succeeded on 10.0.0.6. Output: 
+>>>   
+>>>   
+Login Succeeded
+Using default tag: latest
+latest: Pulling from azureml/azureml_394e2e840889e83d9ee77a40dd82b83c
+e4ca327ec0e7: Pulling fs layer
+a87544960212: Pulling fs layer
+ec9c3b2007a4: Pulling fs layer
+55a073261009: Pulling fs layer
+bdf435931323: Pulling fs layer
+5df48e525641: Pulling fs layer
+9ebeafdd3d8e: Pulling fs layer
+9266e7dbd76e: Pulling fs layer
+b6faea39c74e: Pulling fs layer
+3b95799c2ebb: Pulling fs layer
+002caa122462: Pulling fs layer
+55a073261009: Waiting
+bdf435931323: Waiting
+5df48e525641: Waiting
+9ebeafdd3d8e: Waiting
+9266e7dbd76e: Waiting
+b6faea39c74e: Waiting
+3b95799c2ebb: Waiting
+a0f53a5b028b: Pulling fs layer
+015b33494a2d: Pulling fs layer
+002caa122462: Waiting
+a0f53a5b028b: Waiting
+015b33494a2d: Waiting
+e4ca327ec0e7: Verifying Checksum
+e4ca327ec0e7: Download complete
+ec9c3b2007a4: Verifying Checksum
+ec9c3b2007a4: Download complete
+55a073261009: Verifying Checksum
+55a073261009: Download complete
+5df48e525641: Verifying Checksum
+5df48e525641: Download complete
+9ebeafdd3d8e: Verifying Checksum
+9ebeafdd3d8e: Download complete
+9266e7dbd76e: Verifying Checksum
+9266e7dbd76e: Download complete
+b6faea39c74e: Verifying Checksum
+b6faea39c74e: Download complete
+bdf435931323: Verifying Checksum
+bdf435931323: Download complete
+a87544960212: Verifying Checksum
+a87544960212: Download complete
+a0f53a5b028b: Verifying Checksum
+a0f53a5b028b: Download complete
+015b33494a2d: Verifying Checksum
+015b33494a2d: Download complete
+e4ca327ec0e7: Pull complete
+3b95799c2ebb: Verifying Checksum
+3b95799c2ebb: Download complete
+002caa122462: Verifying Checksum
+002caa122462: Download complete
+a87544960212: Pull complete
+ec9c3b2007a4: Pull complete
+55a073261009: Pull complete
+bdf435931323: Pull complete
+5df48e525641: Pull complete
+9ebeafdd3d8e: Pull complete
+9266e7dbd76e: Pull complete
+b6faea39c74e: Pull complete
+3b95799c2ebb: Pull complete
+002caa122462: Pull complete
+a0f53a5b028b: Pull complete
+015b33494a2d: Pull complete
+Digest: sha256:68dd8d46803d020fbdd4a4b78ba50f39744c516c6b480829f3081b542e0011f6
+Status: Downloaded newer image for viennaglobal.azurecr.io/azureml/azureml_394e2e840889e83d9ee77a40dd82b83c:latest
+viennaglobal.azurecr.io/azureml/azureml_394e2e840889e83d9ee77a40dd82b83c:latest
+2021-09-18T01:11:43Z The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+2021-09-18T01:11:43Z Check if container 3744b61c-6723-498b-83f3-018dd8df3160 already exist exited with 0, 
+
+dee0f5ef8538d41b5b97fd2fbf5f19b3f189abb9bb54532eb003443c8141a1cd
+2021-09-18T01:11:46Z Parameters for containerSetup task: useDetonationChamer set to false and sshRequired set to false 
+2021-09-18T01:11:46Z containerSetup task cmd: [/mnt/batch/tasks/startup/wd/hosttools -task=containerSetup -traceContext=00-f5fdca16b73ffc26bde8292c0cdfca03-1ffddd8c8be97cb0-01 -sshRequired=false] 
+2021/09/18 01:11:46 Starting App Insight Logger for task:  containerSetup
+2021/09/18 01:11:46 Version: 3.0.01719.0004 Branch: .SourceBranch Commit: a462f58
+2021/09/18 01:11:46 Entered ContainerSetupTask - Preparing infiniband
+2021/09/18 01:11:46 Starting infiniband setup
+2021/09/18 01:11:46 Python Version found is Python 3.7.11
+
+2021/09/18 01:11:46 Returning Python Version as 3.7
+2021/09/18 01:11:46 VMSize: standard_d2_v2, Host: runtime-gen1-ubuntu18, Container: ubuntu-18.04
+2021/09/18 01:11:46 VMSize: standard_d2_v2, Host: runtime-gen1-ubuntu18, Container: ubuntu-18.04
+2021-09-18T01:11:46Z VMSize: standard_d2_v2, Host: runtime-gen1-ubuntu18, Container: ubuntu-18.04
+2021/09/18 01:11:46 /dev/infiniband/uverbs0 found (implying presence of InfiniBand)?: false
+2021-09-18T01:11:46Z Not setting up Infiniband in Container
+2021/09/18 01:11:46 Not setting up Infiniband in Container
+2021/09/18 01:11:46 Not setting up Infiniband in Container
+2021/09/18 01:11:46 Python Version found is Python 3.7.11
+
+2021/09/18 01:11:46 Returning Python Version as 3.7
+2021/09/18 01:11:46 sshd inside container not required for job, skipping setup.
+2021/09/18 01:11:46 All App Insights Logs was sent successfully or the close timeout of 10 was reached
+2021/09/18 01:11:46 App Insight Client has already been closed
+2021/09/18 01:11:46 Not exporting to RunHistory as the exporter is either stopped or there is no data.
+Stopped: false
+OriginalData: 1
+FilteredData: 0.
+2021-09-18T01:11:46Z Starting docker container succeeded.
+2021-09-18T01:11:49Z The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+2021-09-18T01:11:49Z The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+2021-09-18T01:11:49Z Job environment preparation succeeded on 10.0.0.6. Output: 
+>>>   2021/09/18 01:11:06 Starting App Insight Logger for task:  prepareJobEnvironment
+>>>   2021/09/18 01:11:06 Version: 3.0.01719.0004 Branch: .SourceBranch Commit: a462f58
+>>>   2021/09/18 01:11:06 runtime.GOOS linux
+>>>   2021/09/18 01:11:06 Checking if '/tmp' exists
+>>>   2021/09/18 01:11:06 Reading dyanamic configs
+>>>   2021/09/18 01:11:06 Container sas url: https://baiscriptscbnprod.blob.core.windows.net/aihosttools?sv=2018-03-28&sr=c&si=aihosttoolspolicy&sig=FKTDvEBYMS%2FS1Y26N8tk0%2FaXrTKE8G0jLlp4LK7Coxw%3D
+>>>   2021/09/18 01:11:07 [in autoUpgradeFromJobNodeSetup] Is Azsecpack installer on host: true. Is Azsecpack installation enabled: true,AzSecPack_RoleInstance="diagnosticserver-6bd557f688-jkbb8"
+>>>   2021/09/18 01:11:07 Starting Azsecpack installation on machine: 7f11e2e2e39f491ab773b613b9e70f5b000003#72f988bf-86f1-41af-91ab-2d7cd011db47#6560575d-fa06-4e7d-95fb-f962e74efd7a#sethucanary#canaryws#cpu-cluster#tvmps_09820c27f99f59e97023d8a75871740d55bc47c8b4948b7e46341c4701f2362d_d
+>>>   2021/09/18 01:11:07 Is Azsecpack enabled: true, GetDisableVsatlsscan: true
+>>>   2021/09/18 01:11:07 Start preparing environment for azsecpack installation. MachineName is 7f11e2e2e39f491ab773b613b9e70f5b000003 
+>>>   
+>>>   2021/09/18 01:11:07 
+>>>   2021/09/18 01:11:07 
+>>>   2021/09/18 01:11:07 Job: AZ_BATCHAI_JOB_NAME does not turn on the DetonationChamber
+>>>   2021/09/18 01:11:07 The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+>>>   2021/09/18 01:11:07 The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+>>>   2021/09/18 01:11:07 Get GPU count failed with err: The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command., 
+>>>   2021/09/18 01:11:07 AMLComputeXDSEndpoint:  https://eastus2euap.cert.api.azureml.ms/xdsbatchai
+>>>   2021/09/18 01:11:07 AMLComputeXDSApiVersion:  2018-02-01
+>>>   2021/09/18 01:11:07 Creating directory /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/config
+>>>   2021/09/18 01:11:07 This is not a aml-workstation (compute instance), current offer type: amlcompute. Starting identity responder as part of prepareJobEnvironment.
+>>>   2021/09/18 01:11:07 Starting identity responder.
+>>>   2021/09/18 01:11:07 Starting identity responder.
+>>>   2021/09/18 01:11:07 Logfile used for identity responder: /mnt/batch/tasks/workitems/8e2e53f6-eb36-469c-8f92-0359eb408aaf/job-1/3744b61c-6723-498b-8_3a99cf88-af6f-43d9-bd0c-8fef717f4505/IdentityResponderLog-tvmps_09820c27f99f59e97023d8a75871740d55bc47c8b4948b7e46341c4701f2362d_d.txt
+>>>   2021/09/18 01:11:07 Logfile used for identity responder: /mnt/batch/tasks/workitems/8e2e53f6-eb36-469c-8f92-0359eb408aaf/job-1/3744b61c-6723-498b-8_3a99cf88-af6f-43d9-bd0c-8fef717f4505/IdentityResponderLog-tvmps_09820c27f99f59e97023d8a75871740d55bc47c8b4948b7e46341c4701f2362d_d.txt
+>>>   2021/09/18 01:11:07 Started Identity Responder for job.
+>>>   2021/09/18 01:11:07 Started Identity Responder for job.
+>>>   2021/09/18 01:11:07 Creating directory /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd
+>>>   2021/09/18 01:11:07 Creating directory /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/shared
+>>>   2021/09/18 01:11:07 WorkingDirPath is specified. Setting env AZ_BATCHAI_JOB_WORK_DIR=$AZ_BATCHAI_JOB_TEMP/azureml/3744b61c-6723-498b-83f3-018dd8df3160
+>>>   2021/09/18 01:11:07 From the policy service, the filtering patterns is: , data store is 
+>>>   2021/09/18 01:11:07 Mounting job level file systems
+>>>   2021/09/18 01:11:07 Creating directory /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/mounts
+>>>   2021/09/18 01:11:07 Attempting to read datastore credentials file: /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/config/.amlcompute.datastorecredentials
+>>>   2021/09/18 01:11:07 Datastore credentials file not found, skipping.
+>>>   2021/09/18 01:11:07 Attempting to read runtime sas tokens file: /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/config/.master.runtimesastokens
+>>>   2021/09/18 01:11:07 Runtime sas tokens file not found, skipping.
+>>>   2021/09/18 01:11:07 NFS mount is not enabled
+>>>   2021/09/18 01:11:07 No Azure File Shares configured
+>>>   2021/09/18 01:11:07 Mounting blob file systems
+>>>   2021/09/18 01:11:07 Blobfuse runtime version 1.3.6
+>>>   2021/09/18 01:11:07 Mounting azureml-blobstore-ff3896fa-5a04-44e6-b4e4-b8287eb67352 container from canaryws9594706371 account at /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/mounts/workspaceblobstore
+>>>   2021/09/18 01:11:07 Using Compute Identity to authenticate Blobfuse: false.
+>>>   2021/09/18 01:11:07 Using Compute Identity to authenticate Blobfuse: false.
+>>>   2021/09/18 01:11:07 Blobfuse cache size set to 92215 MB.
+>>>   2021/09/18 01:11:07 Running following command: /bin/bash -c sudo blobfuse /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/mounts/workspaceblobstore --tmp-path=/mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/caches/workspaceblobstore -o ro --file-cache-timeout-in-seconds=1000000 --cache-size-mb=92215 -o nonempty -o allow_other --config-file=/mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/configs/workspaceblobstore.cfg --log-level=LOG_WARNING
+>>>   2021/09/18 01:11:07 Successfully mounted a/an Blobfuse File System at /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/mounts/workspaceblobstore
+>>>   2021/09/18 01:11:07 Waiting for blobfs to be mounted at /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/mounts/workspaceblobstore
+>>>   2021/09/18 01:11:07 Successfully mounted azureml-blobstore-ff3896fa-5a04-44e6-b4e4-b8287eb67352 container from canaryws9594706371 account at /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/mounts/workspaceblobstore
+>>>   2021/09/18 01:11:07 Failed to created run_id directory: /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/mounts/workspaceblobstore/azureml/3744b61c-6723-498b-83f3-018dd8df3160, due to mkdir /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/mounts/workspaceblobstore/azureml/3744b61c-6723-498b-83f3-018dd8df3160: read-only file system
+>>>   2021/09/18 01:11:07 No unmanaged file systems configured
+>>>   2021/09/18 01:11:07 The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+>>>   2021/09/18 01:11:07 The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+>>>   2021/09/18 01:11:07 WorkingDirPath is specified. Setting env AZ_BATCHAI_JOB_WORK_DIR=$AZ_BATCHAI_JOB_TEMP/azureml/3744b61c-6723-498b-83f3-018dd8df3160
+>>>   2021/09/18 01:11:07 From the policy service, the filtering patterns is: , data store is 
+>>>   2021/09/18 01:11:07 Creating working directory: /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160
+>>>   2021/09/18 01:11:07 Creating directory /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160
+>>>   2021/09/18 01:11:07 Changing permissions for all existing files under directory: /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160
+>>>   2021/09/18 01:11:07 Change mode to 777 for dir /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160
+>>>   2021/09/18 01:11:07 Change mode to 777 for dir /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs
+>>>   2021/09/18 01:11:07 Change mode to 777 for dir /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs/tvmps_09820c27f99f59e97023d8a75871740d55bc47c8b4948b7e46341c4701f2362d_d
+>>>   2021/09/18 01:11:07 Change mode to 666 for file /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs/tvmps_09820c27f99f59e97023d8a75871740d55bc47c8b4948b7e46341c4701f2362d_d/55_azureml-execution-tvmps_09820c27f99f59e97023d8a75871740d55bc47c8b4948b7e46341c4701f2362d_d.txt
+>>>   2021/09/18 01:11:07 Set default ACL for files under directory by running: /usr/bin/setfacl -m default:g::rwx -m default:o::rwx /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160
+>>>   2021/09/18 01:11:07 Creating directory /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs
+>>>   2021/09/18 01:11:07 Changing permissions for all existing files under directory: /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs
+>>>   2021/09/18 01:11:07 Change mode to 777 for dir /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs
+>>>   2021/09/18 01:11:07 Change mode to 777 for dir /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs/tvmps_09820c27f99f59e97023d8a75871740d55bc47c8b4948b7e46341c4701f2362d_d
+>>>   2021/09/18 01:11:07 Change mode to 666 for file /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs/tvmps_09820c27f99f59e97023d8a75871740d55bc47c8b4948b7e46341c4701f2362d_d/55_azureml-execution-tvmps_09820c27f99f59e97023d8a75871740d55bc47c8b4948b7e46341c4701f2362d_d.txt
+>>>   2021/09/18 01:11:07 Set default ACL for files under directory by running: /usr/bin/setfacl -m default:g::rwx -m default:o::rwx /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs
+>>>   2021/09/18 01:11:07 Creating directory /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/logs
+>>>   2021/09/18 01:11:07 Creating directory /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/outputs
+>>>   2021/09/18 01:11:07 Starting output-watcher...
+>>>   2021/09/18 01:11:07 Single file input dataset is enabled.
+>>>   2021/09/18 01:11:07 SidecarEnabled:: isDetonationChamber: false, useDockerContainer: true
+>>>   2021/09/18 01:11:07 SidecarEnabled:: AmlDatasetContextManagerConfig exists: false
+>>>   2021/09/18 01:11:07 SidecarEnabled:: sidecar not enabled
+>>>   2021/09/18 01:11:07 Start to pulling docker image: viennaglobal.azurecr.io/azureml/azureml_394e2e840889e83d9ee77a40dd82b83c
+>>>   2021/09/18 01:11:07 Start pull docker image: viennaglobal.azurecr.io
+>>>   2021/09/18 01:11:07 Getting credentials for image viennaglobal.azurecr.io/azureml/azureml_394e2e840889e83d9ee77a40dd82b83c with url viennaglobal.azurecr.io
+>>>   2021/09/18 01:11:07 Container registry is ACR.
+>>>   2021/09/18 01:11:07 Skip getting ACR Credentials from Identity and will be getting it from EMS
+>>>   2021/09/18 01:11:07 Getting ACR Credentials from EMS for environment AzureML-sklearn-0.24-ubuntu18.04-py37-cpu:7
+>>>   2021/09/18 01:11:07 Requesting XDS for registry details.
+>>>   2021/09/18 01:11:07 Attempt 1 of http call to https://eastus2euap.cert.api.azureml.ms/xdsbatchai/hosttoolapi/subscriptions/6560575d-fa06-4e7d-95fb-f962e74efd7a/resourceGroups/sethucanary/workspaces/canaryws/clusters/cpu-cluster/nodes/tvmps_09820c27f99f59e97023d8a75871740d55bc47c8b4948b7e46341c4701f2362d_d?api-version=2018-02-01
+>>>   2021/09/18 01:11:08 Got container registry details from credentials service for registry address: viennaglobal.azurecr.io.
+>>>   2021/09/18 01:11:08 Writing ACR Details to file...
+>>>   2021/09/18 01:11:08 Copying ACR Details file to worker nodes...
+>>>   2021/09/18 01:11:08 Executing 'Copy ACR Details file' on 10.0.0.6
+>>>   2021/09/18 01:11:08 Begin executing 'Copy ACR Details file' task on Node
+>>>   2021/09/18 01:11:08 'Copy ACR Details file' task Node result: succeeded
+>>>   2021/09/18 01:11:08 Copy ACR Details file succeeded on 10.0.0.6. Output: 
+>>>   >>>   
+>>>   >>>   
+>>>   2021/09/18 01:11:08 Successfully retrieved ACR Credentials from EMS.
+>>>   2021/09/18 01:11:08 EMS returned viennaglobal.azurecr.io for environment AzureML-sklearn-0.24-ubuntu18.04-py37-cpu
+>>>   2021/09/18 01:11:08 Save docker credentials for image viennaglobal.azurecr.io/azureml/azureml_394e2e840889e83d9ee77a40dd82b83c in /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/docker_login_5B9514DCFBD77B3B
+>>>   2021/09/18 01:11:08 Start login to the docker registry
+>>>   2021/09/18 01:11:08 Successfully logged into the docker registry.
+>>>   2021/09/18 01:11:08 Start run pull docker image command
+>>>   2021/09/18 01:11:11 Not exporting to RunHistory as the exporter is either stopped or there is no data.
+>>>   Stopped: false
+>>>   OriginalData: 19
+>>>   FilteredData: 0.
+>>>   2021/09/18 01:11:43 Pull docker image succeeded.
+>>>   2021/09/18 01:11:43 Removed docker config dir /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/docker_login_5B9514DCFBD77B3B
+>>>   2021/09/18 01:11:43 Pull docker image time: 35.995928193s
+>>>   
+>>>   2021/09/18 01:11:43 Docker Version that this nodes use are: 19.03.14+azure
+>>>   
+>>>   2021/09/18 01:11:43 The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+>>>   2021/09/18 01:11:43 The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+>>>   2021/09/18 01:11:43 Setting the memory limit for docker container to be 6618 MB
+>>>   2021/09/18 01:11:43 The env variable file size is 39224 bytes
+>>>   2021/09/18 01:11:43 Creating parent cgroup '3744b61c-6723-498b-83f3-018dd8df3160' for Containers used in Job
+>>>   2021/09/18 01:11:43 Add parent cgroup '3744b61c-6723-498b-83f3-018dd8df3160' to container '3744b61c-6723-498b-83f3-018dd8df3160'
+>>>   2021/09/18 01:11:43 /dev/infiniband/uverbs0 found (implying presence of InfiniBand)?: false
+>>>   2021/09/18 01:11:43 Original Arguments: run,--ulimit,memlock=9223372036854775807,--ulimit,nofile=262144:262144,--cap-add,sys_ptrace,--name,3744b61c-6723-498b-83f3-018dd8df3160,-v,/mnt/batch/tasks/shared/LS_root/mounts:/mnt/batch/tasks/shared/LS_root/mounts:rshared,-v,/mnt/batch/tasks/shared/LS_root/configs:/mnt/batch/tasks/shared/LS_root/configs,-v,/mnt/batch/tasks/shared/LS_root/shared:/mnt/batch/tasks/shared/LS_root/shared,-v,/mnt/batch/tasks/workitems/8e2e53f6-eb36-469c-8f92-0359eb408aaf/job-1/3744b61c-6723-498b-8_3a99cf88-af6f-43d9-bd0c-8fef717f4505/certs:/mnt/batch/tasks/workitems/8e2e53f6-eb36-469c-8f92-0359eb408aaf/job-1/3744b61c-6723-498b-8_3a99cf88-af6f-43d9-bd0c-8fef717f4505/certs,-v,/mnt/batch/tasks/startup:/mnt/batch/tasks/startup,-m,6618m,-v,/mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs:/mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs,-v,/mnt/batch/tasks/workitems/8e2e53f6-eb36-469c-8f92-0359eb408aaf/job-1/3744b61c-6723-498b-8_3a99cf88-af6f-43d9-bd0c-8fef717f4505/wd:/mnt/batch/tasks/workitems/8e2e53f6-eb36-469c-8f92-0359eb408aaf/job-1/3744b61c-6723-498b-8_3a99cf88-af6f-43d9-bd0c-8fef717f4505/wd,-v,/mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160:/mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160,-v,/mnt/batch/tasks/shared/LS_root/shared/tracing/3744b61c-6723-498b-83f3-018dd8df3160/logs/azureml/tracing:/mnt/batch/tasks/shared/LS_root/shared/tracing/3744b61c-6723-498b-83f3-018dd8df3160/logs/azureml/tracing,-w,/mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd,--expose,23,--env-file,/mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/config/.batchai.envlist,--cgroup-parent=/3744b61c-6723-498b-83f3-018dd8df3160/,--shm-size,2g
+>>>   2021/09/18 01:11:43 the binding /mnt/batch/tasks/shared/LS_root/shared/tracing/3744b61c-6723-498b-83f3-018dd8df3160/logs/azureml/tracing:/mnt/batch/tasks/shared/LS_root/shared/tracing/3744b61c-6723-498b-83f3-018dd8df3160/logs/azureml/tracing is discarded as we already have /mnt/batch/tasks/shared/LS_root/shared:/mnt/batch/tasks/shared/LS_root/shared 
+>>>   2021/09/18 01:11:43 the binding /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs:/mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs is discarded as we already have /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160:/mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160 
+>>>   2021/09/18 01:11:43 Updated Arguments: run,--ulimit,memlock=9223372036854775807,--ulimit,nofile=262144:262144,--cap-add,sys_ptrace,--name,3744b61c-6723-498b-83f3-018dd8df3160,-m,6618m,-w,/mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd,--expose,23,--env-file,/mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/config/.batchai.envlist,--cgroup-parent=/3744b61c-6723-498b-83f3-018dd8df3160/,--shm-size,2g,-v,/mnt/batch/tasks/startup:/mnt/batch/tasks/startup,-v,/mnt/batch/tasks/shared/LS_root/mounts:/mnt/batch/tasks/shared/LS_root/mounts:rshared,-v,/mnt/batch/tasks/shared/LS_root/shared:/mnt/batch/tasks/shared/LS_root/shared,-v,/mnt/batch/tasks/shared/LS_root/configs:/mnt/batch/tasks/shared/LS_root/configs,-v,/mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160:/mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160,-v,/mnt/batch/tasks/workitems/8e2e53f6-eb36-469c-8f92-0359eb408aaf/job-1/3744b61c-6723-498b-8_3a99cf88-af6f-43d9-bd0c-8fef717f4505/wd:/mnt/batch/tasks/workitems/8e2e53f6-eb36-469c-8f92-0359eb408aaf/job-1/3744b61c-6723-498b-8_3a99cf88-af6f-43d9-bd0c-8fef717f4505/wd,-v,/mnt/batch/tasks/workitems/8e2e53f6-eb36-469c-8f92-0359eb408aaf/job-1/3744b61c-6723-498b-8_3a99cf88-af6f-43d9-bd0c-8fef717f4505/certs:/mnt/batch/tasks/workitems/8e2e53f6-eb36-469c-8f92-0359eb408aaf/job-1/3744b61c-6723-498b-8_3a99cf88-af6f-43d9-bd0c-8fef717f4505/certs
+>>>   2021/09/18 01:11:43 Running Docker command: docker run --ulimit memlock=9223372036854775807 --ulimit nofile=262144:262144 --cap-add sys_ptrace --name 3744b61c-6723-498b-83f3-018dd8df3160 -m 6618m -w /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd --expose 23 --env-file /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/config/.batchai.envlist --cgroup-parent=/3744b61c-6723-498b-83f3-018dd8df3160/ --shm-size 2g -v /mnt/batch/tasks/startup:/mnt/batch/tasks/startup -v /mnt/batch/tasks/shared/LS_root/mounts:/mnt/batch/tasks/shared/LS_root/mounts:rshared -v /mnt/batch/tasks/shared/LS_root/shared:/mnt/batch/tasks/shared/LS_root/shared -v /mnt/batch/tasks/shared/LS_root/configs:/mnt/batch/tasks/shared/LS_root/configs -v /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160:/mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160 -v /mnt/batch/tasks/workitems/8e2e53f6-eb36-469c-8f92-0359eb408aaf/job-1/3744b61c-6723-498b-8_3a99cf88-af6f-43d9-bd0c-8fef717f4505/wd:/mnt/batch/tasks/workitems/8e2e53f6-eb36-469c-8f92-0359eb408aaf/job-1/3744b61c-6723-498b-8_3a99cf88-af6f-43d9-bd0c-8fef717f4505/wd -v /mnt/batch/tasks/workitems/8e2e53f6-eb36-469c-8f92-0359eb408aaf/job-1/3744b61c-6723-498b-8_3a99cf88-af6f-43d9-bd0c-8fef717f4505/certs:/mnt/batch/tasks/workitems/8e2e53f6-eb36-469c-8f92-0359eb408aaf/job-1/3744b61c-6723-498b-8_3a99cf88-af6f-43d9-bd0c-8fef717f4505/certs -d -it --privileged --net=host viennaglobal.azurecr.io/azureml/azureml_394e2e840889e83d9ee77a40dd82b83c
+>>>   2021/09/18 01:11:43 Check if container 3744b61c-6723-498b-83f3-018dd8df3160 already exist exited with 0, 
+>>>   
+>>>   2021/09/18 01:11:43 Check if container 3744b61c-6723-498b-83f3-018dd8df3160 already exist exited with 0, 
+>>>   
+>>>   2021/09/18 01:11:46 Parameters for containerSetup task: useDetonationChamer set to false and sshRequired set to false 
+>>>   2021/09/18 01:11:46 Parameters for containerSetup task: useDetonationChamer set to false and sshRequired set to false 
+>>>   2021/09/18 01:11:46 containerSetup task cmd: [/mnt/batch/tasks/startup/wd/hosttools -task=containerSetup -traceContext=00-f5fdca16b73ffc26bde8292c0cdfca03-1ffddd8c8be97cb0-01 -sshRequired=false] 
+>>>   2021/09/18 01:11:46 containerSetup task cmd: [/mnt/batch/tasks/startup/wd/hosttools -task=containerSetup -traceContext=00-f5fdca16b73ffc26bde8292c0cdfca03-1ffddd8c8be97cb0-01 -sshRequired=false] 
+>>>   2021/09/18 01:11:46 Attempt 1 of http call to https://eastus2euap.api.azureml.ms/history/v1.0/private/subscriptions/6560575d-fa06-4e7d-95fb-f962e74efd7a/resourceGroups/sethucanary/providers/Microsoft.MachineLearningServices/workspaces/canaryws/runs/3744b61c-6723-498b-83f3-018dd8df3160/spans
+>>>   2021/09/18 01:11:46 Container ssh is not required for job type.
+>>>   2021/09/18 01:11:46 Starting docker container succeeded.
+>>>   2021/09/18 01:11:46 Starting docker container succeeded.
+>>>   2021/09/18 01:11:46 Disk space after starting docker container: 92508MB
+>>>   2021/09/18 01:11:46 SidecarEnabled:: isDetonationChamber: false, useDockerContainer: true
+>>>   2021/09/18 01:11:46 SidecarEnabled:: AmlDatasetContextManagerConfig exists: false
+>>>   2021/09/18 01:11:46 SidecarEnabled:: sidecar not enabled
+>>>   2021/09/18 01:11:46 Begin execution of runSpecialJobTask
+>>>   2021/09/18 01:11:46 Creating directory at $AZUREML_LOGDIRECTORY_PATH
+>>>   2021/09/18 01:11:46 Creating directory /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml-logs
+>>>   2021/09/18 01:11:46 runSpecialJobTask: checking control script content under dir: /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/mounts/workspaceblobstore/azureml/3744b61c-6723-498b-83f3-018dd8df3160-setup
+>>>   2021/09/18 01:11:48 runSpecialJobTask: control script dir content: [_tracer.py: size=2022 md5=4c1dd974ef27d1cbec1434a93802ac73; _tracing.py: size=26407 md5=64b473943a5d2905628a9b2097f18081; _vendor_jwt_decode.py: size=2277 md5=d4b49e48ed904f03a4d6ad2f64f17368; azureml_globals.py: size=12242 md5=3700b728b132e633c956f368d13818e4; context_managers.py: size=48073 md5=1d499aa329dc1debda235d60098e98dd; job_prep.py: size=11214 md5=13bb64f32d440c1fbaff3644045668fc; log_history_status.py: size=4428 md5=778bbe2bb6cb72340d4344366f752a63; request_utilities.py: size=1185 md5=e053daf561ffebe1c54811d9dc11beaa; run_token_provider.py: size=4228 md5=b167c8697df9c999e3676723caa93cb3; utility_context_managers.py: size=5015 md5=824d969dee21cf92733986c744d17142]
+>>>   2021/09/18 01:11:48 runSpecialJobTask: os.GetEnv constants.StdouterrDir: /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs
+>>>   2021/09/18 01:11:48 runSpecialJobTask: Raw cmd for preparation is passed is: python /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/mounts/workspaceblobstore/azureml/3744b61c-6723-498b-83f3-018dd8df3160-setup/job_prep.py --snapshots '[{"Id":"7665be70-dcc5-471e-bdee-e9be00755460","PathStack":["."],"SnapshotEntityId":null}]'
+>>>   2021/09/18 01:11:48 runSpecialJobTask: stdout path for preparation is passed is: /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs/65_job_prep-tvmps_09820c27f99f59e97023d8a75871740d55bc47c8b4948b7e46341c4701f2362d_d.txt
+>>>   2021/09/18 01:11:48 runSpecialJobTask: stderr path for preparation is passed is: /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs/65_job_prep-tvmps_09820c27f99f59e97023d8a75871740d55bc47c8b4948b7e46341c4701f2362d_d.txt
+>>>   2021/09/18 01:11:48 native cmd: export AZUREML_JOB_TASK_ERROR_PATH='/mnt/batch/tasks/workitems/8e2e53f6-eb36-469c-8f92-0359eb408aaf/job-1/3744b61c-6723-498b-8_3a99cf88-af6f-43d9-bd0c-8fef717f4505/wd/runSpecialJobTask_error.json';cd /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160;python /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/mounts/workspaceblobstore/azureml/3744b61c-6723-498b-83f3-018dd8df3160-setup/job_prep.py --snapshots '[{"Id":"7665be70-dcc5-471e-bdee-e9be00755460","PathStack":["."],"SnapshotEntityId":null}]'
+>>>   2021/09/18 01:11:48 runSpecialJobTask: commons.GetOsPlatform(): ubuntu
+>>>   2021/09/18 01:11:48 runSpecialJobTask: Running cmd: /usr/bin/docker exec -e AZUREML_SDK_TRACEPARENT=00-f5fdca16b73ffc26bde8292c0cdfca03-27971ac5b663ead2-01 -t 3744b61c-6723-498b-83f3-018dd8df3160 bash -c if [ -f ~/.bashrc ]; then PS1_back=$PS1; PS1='$'; . ~/.bashrc; PS1=$PS1_back; fi;PATH=$PATH:$AZ_BATCH_NODE_STARTUP_DIR/wd/;export AZUREML_JOB_TASK_ERROR_PATH='/mnt/batch/tasks/workitems/8e2e53f6-eb36-469c-8f92-0359eb408aaf/job-1/3744b61c-6723-498b-8_3a99cf88-af6f-43d9-bd0c-8fef717f4505/wd/runSpecialJobTask_error.json';cd /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160;python /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/mounts/workspaceblobstore/azureml/3744b61c-6723-498b-83f3-018dd8df3160-setup/job_prep.py --snapshots '[{"Id":"7665be70-dcc5-471e-bdee-e9be00755460","PathStack":["."],"SnapshotEntityId":null}]'
+>>>   2021/09/18 01:11:49 containerName:3744b61c-6723-498b-83f3-018dd8df3160
+>>>   2021/09/18 01:11:49 sidecar containerName:3744b61c-6723-498b-83f3-018dd8df3160
+>>>   2021/09/18 01:11:49 Docker Version that this nodes use are: 19.03.14+azure
+>>>   
+>>>   2021/09/18 01:11:49 The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+>>>   2021/09/18 01:11:49 The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+>>>   2021/09/18 01:11:49 sidecar dockerLauncher:docker
+>>>   2021/09/18 01:11:49 sidecarContainerId:dee0f5ef8538d41b5b97fd2fbf5f19b3f189abb9bb54532eb003443c8141a1cd
+>>>   2021/09/18 01:11:49 Docker Version that this nodes use are: 19.03.14+azure
+>>>   
+>>>   2021/09/18 01:11:49 The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+>>>   2021/09/18 01:11:49 The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+>>>   2021/09/18 01:11:49 Docker logs for 3744b61c-6723-498b-83f3-018dd8df3160
+>>>   ]0;root@7f11e2e2e39f491ab773b613b9e70f5b000003: /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wdroot@7f11e2e2e39f491ab773b613b9e70f5b000003:/mnt/batch/tasks/shared/LS_root/jobs/
+>>>   
+>>>   2021/09/18 01:11:49 runSpecialJobTask: job preparation exited with code 0 and err <nil>
+>>>   
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:48.205205] Entering job preparation.
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:48.834995] Starting job preparation.
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:48.835073] Extracting the control code.
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:48.835546] Starting extract_project.
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:48.835584] Starting to extract zip file.
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:48.873428] Finished extracting zip file.
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:48.876930] Using urllib.request Python 3.0 or later
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:48.877103] Start fetching snapshots.
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:48.877160] Start fetching snapshot.
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:48.877201] Retrieving project from snapshot: 7665be70-dcc5-471e-bdee-e9be00755460
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: Starting the daemon thread to refresh tokens in background for process with pid = 45
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:49.199084] Finished fetching snapshot.
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:49.199135] Finished fetching snapshots.
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:49.199163] Finished extract_project.
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:49.199534] Finished fetching and extracting the control code.
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:49.204806] downloadDataStore - Download from datastores if requested.
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:49.206461] Start run_history_prep.
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:49.212304] Entering context manager injector.
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:49.217379] downloadDataStore completed
+>>>   2021/09/18 01:11:49 runSpecialJobTask: preparation: [2021-09-18T01:11:49.219286] Job preparation is complete.
+>>>   2021/09/18 01:11:49 DockerSideCarContainerLogs:
+>>>   ]0;root@7f11e2e2e39f491ab773b613b9e70f5b000003: /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wdroot@7f11e2e2e39f491ab773b613b9e70f5b000003:/mnt/batch/tasks/shared/LS_root/jobs/
+>>>   
+>>>   2021/09/18 01:11:49 DockerSideCarContainerLogs End
+>>>   2021/09/18 01:11:49 Execution of runSpecialJobTask completed
+>>>   2021/09/18 01:11:49 Not exporting to RunHistory as the exporter is either stopped or there is no data.
+>>>   Stopped: false
+>>>   OriginalData: 5
+>>>   FilteredData: 0.
+>>>   2021/09/18 01:11:49 Process Exiting with Code:  0
+>>>   2021/09/18 01:11:49 All App Insights Logs was sent successfully or the close timeout of 10 was reached
+>>>   
+2021-09-18T01:11:50Z The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+2021-09-18T01:11:50Z The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+2021-09-18T01:11:50Z 127.0.0.1 slots=2 max-slots=2
+2021-09-18T01:11:50Z launching Custom job
+2021-09-18T01:11:56Z job exited with code 0
+2021-09-18T01:11:56Z Executing 'JobRelease task' on 10.0.0.6
+2021-09-18T01:11:58Z The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+2021-09-18T01:11:58Z The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+2021-09-18T01:11:59Z JobRelease task succeeded on 10.0.0.6. Output: 
+>>>   2021/09/18 01:11:57 Starting App Insight Logger for task:  jobRelease
+>>>   2021/09/18 01:11:57 Version: 3.0.01719.0004 Branch: .SourceBranch Commit: a462f58
+>>>   2021/09/18 01:11:57 SidecarEnabled:: isDetonationChamber: false, useDockerContainer: true
+>>>   2021/09/18 01:11:57 SidecarEnabled:: AmlDatasetContextManagerConfig exists: false
+>>>   2021/09/18 01:11:57 SidecarEnabled:: sidecar not enabled
+>>>   2021/09/18 01:11:57 runSpecialJobTask: os.GetEnv constants.StdouterrDir: /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs
+>>>   2021/09/18 01:11:57 runSpecialJobTask: Raw cmd for postprocessing is passed is: export AZ_BATCHAI_RUN_STATUS='SUCCEEDED';export AZ_BATCHAI_LOG_UPLOAD_FAILED='false';python $AZ_BATCHAI_JOB_TEMP/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml-setup/job_release.py
+>>>   2021/09/18 01:11:57 runSpecialJobTask: stdout path for postprocessing is passed is: /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs/75_job_post-tvmps_09820c27f99f59e97023d8a75871740d55bc47c8b4948b7e46341c4701f2362d_d.txt
+>>>   2021/09/18 01:11:57 runSpecialJobTask: stderr path for postprocessing is passed is: /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml_compute_logs/75_job_post-tvmps_09820c27f99f59e97023d8a75871740d55bc47c8b4948b7e46341c4701f2362d_d.txt
+>>>   2021/09/18 01:11:57 native cmd: export AZUREML_JOB_TASK_ERROR_PATH='/mnt/batch/tasks/workitems/8e2e53f6-eb36-469c-8f92-0359eb408aaf/job-1/3744b61c-6723-498b-8_3a99cf88-af6f-43d9-bd0c-8fef717f4505/wd/runSpecialJobTask_error.json';cd /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160;export AZ_BATCHAI_RUN_STATUS='SUCCEEDED';export AZ_BATCHAI_LOG_UPLOAD_FAILED='false';python $AZ_BATCHAI_JOB_TEMP/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml-setup/job_release.py
+>>>   2021/09/18 01:11:57 runSpecialJobTask: commons.GetOsPlatform(): ubuntu
+>>>   2021/09/18 01:11:57 runSpecialJobTask: Running cmd: /usr/bin/docker exec -e AZUREML_SDK_TRACEPARENT=00-f5fdca16b73ffc26bde8292c0cdfca03-380841b61143c25c-01 -t 3744b61c-6723-498b-83f3-018dd8df3160 bash -c if [ -f ~/.bashrc ]; then PS1_back=$PS1; PS1='$'; . ~/.bashrc; PS1=$PS1_back; fi;PATH=$PATH:$AZ_BATCH_NODE_STARTUP_DIR/wd/;export AZUREML_JOB_TASK_ERROR_PATH='/mnt/batch/tasks/workitems/8e2e53f6-eb36-469c-8f92-0359eb408aaf/job-1/3744b61c-6723-498b-8_3a99cf88-af6f-43d9-bd0c-8fef717f4505/wd/runSpecialJobTask_error.json';cd /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wd/azureml/3744b61c-6723-498b-83f3-018dd8df3160;export AZ_BATCHAI_RUN_STATUS='SUCCEEDED';export AZ_BATCHAI_LOG_UPLOAD_FAILED='false';python $AZ_BATCHAI_JOB_TEMP/azureml/3744b61c-6723-498b-83f3-018dd8df3160/azureml-setup/job_release.py
+>>>   2021/09/18 01:11:58 containerName:3744b61c-6723-498b-83f3-018dd8df3160
+>>>   2021/09/18 01:11:58 sidecar containerName:3744b61c-6723-498b-83f3-018dd8df3160
+>>>   2021/09/18 01:11:58 Docker Version that this nodes use are: 19.03.14+azure
+>>>   
+>>>   2021/09/18 01:11:58 The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+>>>   2021/09/18 01:11:58 The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+>>>   2021/09/18 01:11:58 sidecar dockerLauncher:docker
+>>>   2021/09/18 01:11:58 sidecarContainerId:dee0f5ef8538d41b5b97fd2fbf5f19b3f189abb9bb54532eb003443c8141a1cd
+>>>   2021/09/18 01:11:58 Docker Version that this nodes use are: 19.03.14+azure
+>>>   
+>>>   2021/09/18 01:11:58 The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+>>>   2021/09/18 01:11:58 The vmsize standard_d2_v2 is not a GPU VM, skipping get GPU count by running nvidia-smi command.
+>>>   2021/09/18 01:11:58 Docker logs for 3744b61c-6723-498b-83f3-018dd8df3160
+>>>   ]0;root@7f11e2e2e39f491ab773b613b9e70f5b000003: /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wdroot@7f11e2e2e39f491ab773b613b9e70f5b000003:/mnt/batch/tasks/shared/LS_root/jobs/
+>>>   
+>>>   2021/09/18 01:11:58 runSpecialJobTask: job postprocessing exited with code 0 and err <nil>
+>>>   
+>>>   2021/09/18 01:11:58 runSpecialJobTask: postprocessing: [2021-09-18T01:11:57.227679] Entering job release
+>>>   2021/09/18 01:11:58 runSpecialJobTask: postprocessing: [2021-09-18T01:11:58.123892] Starting job release
+>>>   2021/09/18 01:11:58 runSpecialJobTask: postprocessing: [2021-09-18T01:11:58.124572] Logging experiment finalizing status in history service.
+>>>   2021/09/18 01:11:58 runSpecialJobTask: postprocessing: [2021-09-18T01:11:58.124856] job release stage : upload_datastore starting...
+>>>   2021/09/18 01:11:58 runSpecialJobTask: postprocessing: Starting the daemon thread to refresh tokens in background for process with pid = 126
+>>>   2021/09/18 01:11:58 runSpecialJobTask: postprocessing: [2021-09-18T01:11:58.125511] job release stage : start importing azureml.history._tracking in run_history_release.[2021-09-18T01:11:58.125914] job release stage : copy_batchai_cached_logs starting...
+>>>   2021/09/18 01:11:58 runSpecialJobTask: postprocessing: [2021-09-18T01:11:58.128749] job release stage : execute_job_release starting...
+>>>   2021/09/18 01:11:58 runSpecialJobTask: postprocessing: 
+>>>   2021/09/18 01:11:58 runSpecialJobTask: postprocessing: [2021-09-18T01:11:58.137117] job release stage : copy_batchai_cached_logs completed...[2021-09-18T01:11:58.141232] Entering context manager injector.
+>>>   2021/09/18 01:11:58 runSpecialJobTask: postprocessing: 
+>>>   2021/09/18 01:11:58 runSpecialJobTask: postprocessing: [2021-09-18T01:11:58.143923] job release stage : upload_datastore completed...
+>>>   2021/09/18 01:11:58 runSpecialJobTask: postprocessing: [2021-09-18T01:11:58.226069] job release stage : send_run_telemetry starting...
+>>>   2021/09/18 01:11:58 runSpecialJobTask: postprocessing: [2021-09-18T01:11:58.247699] get vm size and vm region successfully.
+>>>   2021/09/18 01:11:58 runSpecialJobTask: postprocessing: [2021-09-18T01:11:58.275570] get compute meta data successfully.
+>>>   2021/09/18 01:11:58 runSpecialJobTask: postprocessing: [2021-09-18T01:11:58.275815] job release stage : send_run_telemetry completed...
+>>>   2021/09/18 01:11:58 runSpecialJobTask: postprocessing: [2021-09-18T01:11:58.342448] job release stage : execute_job_release completed...
+>>>   2021/09/18 01:11:58 runSpecialJobTask: postprocessing: [2021-09-18T01:11:58.342789] Job release is complete
+>>>   2021/09/18 01:11:58 DockerSideCarContainerLogs:
+>>>   ]0;root@7f11e2e2e39f491ab773b613b9e70f5b000003: /mnt/batch/tasks/shared/LS_root/jobs/canaryws/3dcd96adcf1a41f1bccd5dc51fdeb476/3744b61c-6723-498b-83f3-018dd8df3160/wdroot@7f11e2e2e39f491ab773b613b9e70f5b000003:/mnt/batch/tasks/shared/LS_root/jobs/
+>>>   
+>>>   2021/09/18 01:11:58 DockerSideCarContainerLogs End
+>>>   2021/09/18 01:11:59 All App Insights Logs was sent successfully or the close timeout of 10 was reached
+>>>   2021/09/18 01:11:59 App Insight Client has already been closed
+>>>   2021/09/18 01:11:59 Not exporting to RunHistory as the exporter is either stopped or there is no data.
+>>>   Stopped: false
+>>>   OriginalData: 3
+>>>   FilteredData: 0.
+>>>   
+2021-09-18T01:11:59Z Executing 'Job environment clean-up' on 10.0.0.6
+2021-09-18T01:11:59Z Removing container 3744b61c-6723-498b-83f3-018dd8df3160 exited with 0, 3744b61c-6723-498b-83f3-018dd8df3160
+
+
