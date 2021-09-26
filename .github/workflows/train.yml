@@ -41,7 +41,7 @@ jobs:
         # register model
         MODEL_VERSION=$(az ml model create -n ${{ env.MODEL_NAME }} -l run-outputs/$TRAINING_JOB/${{ env.MODMODEL_FILE_PATHL_NAME }} | jq -r .version)
         #write model name and version to file
-        export MODEL_NAME_WITH_VERSION=azureml:${{ env.MODEL_NAME }}:$LATEST_MODEL_VERSION
+        export MODEL_NAME_WITH_VERSION=azureml:${{ env.MODEL_NAME }}:$MODEL_VERSION
         echo $MODEL_NAME_WITH_VERSION > latest-model.txt
     
     - name: Update model verion as artifact
