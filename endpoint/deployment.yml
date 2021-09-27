@@ -1,4 +1,3 @@
-$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
 name: blue
 model: azureml:risk-model:1
 code_configuration:      
@@ -7,7 +6,6 @@ code_configuration:
   scoring_script: score.py    
 environment: 
   conda_file: environment/conda.yml
-  docker:
-    image: mcr.microsoft.com/azureml/openmpi3.1.2-ubuntu18.04:20210727.v1
+  image: mcr.microsoft.com/azureml/openmpi3.1.2-ubuntu18.04:20210727.v1
 instance_type: Standard_F2s_v2
 instance_count: 1
