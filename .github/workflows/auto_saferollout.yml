@@ -87,7 +87,7 @@ jobs:
           if [[ $PROD_TRAFFIC -ne '100' ]]; then echo "Error: For this saferollout script to start, traffic to prod deployment needs to be 100%"; exit 1; fi  
 
           echo "::set-output name=NOT_FIRST_RUN::true"
-          echo "NOT_FIRST_RUN=$NOT_FIRST_RUN" >> $GITHUB_ENV
+          echo "NOT_FIRST_RUN=true" >> $GITHUB_ENV
         fi
     - name: Step 2-Create RC deployment
       if: ${{ env.NOT_FIRST_RUN }}
