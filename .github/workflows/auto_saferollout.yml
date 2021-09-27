@@ -414,4 +414,4 @@ jobs:
           ENDPOINT_URI=$(az ml online-endpoint show -n ${{secrets.ENDPOINT_NAME}} -o tsv --query scoring_uri)        
           echo $ENDPOINT_URI
           ENDPOINT_TOKEN=$(az ml online-endpoint get-credentials -n ${{secrets.ENDPOINT_NAME}} -o tsv --query primaryKey)
-          echo "POST $ENDPOINT_URI" | ./vegeta attack -body endpoint/sample-request.json -header "Content-Type: application/json" -header "authorization: Bearer $ENDPOINT_TOKEN" -rate=15 -duration ${{env.LOAD_GENERATOR_DURATION}} -output loadtest.out 
+          echo "POST $ENDPOINT_URI" | ./vegeta attack -body endpoint/sample-request.json -header "Content-Type: application/json" -header "authorization: Bearer $ENDPOINT_TOKEN" -rate=15 -duration ${{env.LOAD_GENERATOR_DURATION}} # -output loadtest.out 
