@@ -5,7 +5,7 @@ on:
 env:
   TRAINING_JOB_PREFIX: risk-model-job
   MODEL_NAME: risk-model #registered registration model name
-  MODEL_FILE_NAME: risk_model.joblib #output file from training script
+  #MODEL_FILE_NAME: risk_model.joblib #output file from training script
 
 jobs:  
   train:
@@ -39,7 +39,7 @@ jobs:
         # download the job output
         az ml job download -n $TRAINING_JOB -p run-outputs        
         # register model
-        MODEL_VERSION=$(az ml model create -n ${{ env.MODEL_NAME }} -l run-outputs/$TRAINING_JOB/outputs/${{env.MODEL_FILE_NAME}} | jq -r .version)
+        MODEL_VERSION=$(az ml model create -n ${{ env.MODEL_NAME }} -l run-outputs/$TRAINING_JOB/outputs/ | jq -r .version)
         #write model name and version to file
         export MODEL_NAME_WITH_VERSION=azureml:${{ env.MODEL_NAME }}:$MODEL_VERSION
         echo $MODEL_NAME_WITH_VERSION > latest-model.txt
