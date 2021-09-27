@@ -184,8 +184,8 @@ jobs:
       - name: Divert 100% traffic to RC and mark RC as PROD, PROD as OLD_PROD
         run: | 
           export OLD_PROD_DEPLOYMENT=$(az ml online-endpoint show -n ${{secrets.ENDPOINT_NAME }} -o tsv --query "tags.OLD_PROD_DEPLOYMENT")          
-          az ml online-deployment delete --endpoint ${{secrets.ENDPOINT_NAME }} --name $OLD_PROD_DEPLOYMENT --yes --no-wait
           az ml online-endpoint update -n ${{secrets.ENDPOINT_NAME }} --remove tags.OLD_PROD_DEPLOYMENT
+          az ml online-deployment delete --endpoint ${{secrets.ENDPOINT_NAME }} --name $OLD_PROD_DEPLOYMENT --yes --no-wait          
 
   ############## auto validation of metrics ################
   validate_errors_within_threshold_10pct_traffic:

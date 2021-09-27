@@ -25,7 +25,7 @@ A service principal (SP) is needed inorder for your github actions pipelines to 
 
 Create a SP and add it to the repository `secrets` named `AZURE_CREDENTIALS` by following instructions [here](https://github.com/marketplace/actions/azure-login#configure-deployment-credentials). Ignore the option to create SP for webapp, and just do it for `resource group`.
 
-## Setup your workspace
+## Step 4: Setup your workspace
 
 [Run](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow) the `Setup` github action pipeline to finish the setup.
 This will create the following resources:
@@ -33,6 +33,9 @@ This will create the following resources:
 2. Log analytics workspace (used for managed online endpoints)
 3. Training cpu-cluster
 4. A sample dataset for training
+
+## Step 5: Create environments in github
+todo
 
 ## Get started!
 Now you are all set! Go to the [getting started](getting-started.md) to try out the mlops pipelines
