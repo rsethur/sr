@@ -13,7 +13,7 @@ env:
 jobs:
   
   create_rc_deployment:
-    name: Create deployment and sanity test #Rollout 10% traffic
+    name: Create RC & sanity test
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch'}}
     outputs:
@@ -87,6 +87,11 @@ jobs:
       run: |          
         az ml online-deployment create --name ${{ env.RC_DEPLOYMENT_NAME }} --endpoint ${{secrets.ENDPOINT_NAME }} -f ${{ env.DEPLOYMENT_FILE }} --all-traffic --set model=${{ env.LATEST_MODEL }}
 
+    - name: Step 3-Sanity test RC with zero traffic
+      if: ${{ env.NOT_FIRST_RUN }}
+      run: |          
+        az ml online-endpoint invoke -n ${{secrets.ENDPOINT_NAME }} --deployment ${{ env.RC_DEPLOYMENT_NAME }} --request-file endpoint/sample-request.json
+
   rollout_10pct_traffic:
     needs: [create_rc_deployment]
     if: ${{ needs.create_rc_deployment.outputs.NOT_FIRST_RUN }}
@@ -107,9 +112,9 @@ jobs:
     - name: Install azureml cli extension
       run: az extension add --source https://azuremlsdktestpypi.blob.core.windows.net/wheels/sdk-cli-v2/ml-0.0.15_october_cand-py3-none-any.whl --yes
     - name: Step 3-Divert 10% traffic to RC
-      if: ${{ env.NOT_FIRST_RUN }}
       run: | 
-          az ml online-endpoint update -n ${{secrets.ENDPOINT_NAME }} --traffic "${{env.PROD_DEPLOYMENT}}=90 ${{env.RC_DEPLOYMENT_NAME}}=10"        
+          export PROD_DEPLOYMENT=$(az ml online-endpoint show -n ${{secrets.ENDPOINT_NAME }} -o tsv --query "tags.PROD_DEPLOYMENT")
+          az ml online-endpoint update -n ${{secrets.ENDPOINT_NAME }} --traffic "$PROD_DEPLOYMENT=90 ${{env.RC_DEPLOYMENT_NAME}}=10"        
 
   rollout_50pct_traffic:
     needs: [rollout_10pct_traffic, validate_errors_within_threshold_10pct_traffic, validate_latency_within_threshold_10pct_traffic]    
@@ -126,15 +131,14 @@ jobs:
         run: |
           az config set defaults.workspace=${{secrets.AML_WORKSPACE}}
           az config set defaults.group=${{secrets.RESOURCE_GROUP}}
-          az account set -s ${{secrets.SUBSCRIPTION_ID}}
-      
+          az account set -s ${{secrets.SUBSCRIPTION_ID}}      
       
       - name: Install azureml cli extension
         run: az extension add --source https://azuremlsdktestpypi.blob.core.windows.net/wheels/sdk-cli-v2/ml-0.0.15_october_cand-py3-none-any.whl --yes
       - name: Divert 50% traffic to RC
         run: | 
-          export PROD_DEPLOYMENT=$(az ml online-endpoint show -n ${{secrets.ENDPOINT_NAME }} -o tsv --query "tags.PROD_DEPLOYMENT")          
-          az ml online-endpoint update -n ${{secrets.ENDPOINT_NAME }} --traffic "${{env.PROD_DEPLOYMENT}}=50 ${{env.RC_DEPLOYMENT_NAME}}=50"
+          export PROD_DEPLOYMENT=$(az ml online-endpoint show -n ${{secrets.ENDPOINT_NAME }} -o tsv --query "tags.PROD_DEPLOYMENT")
+          az ml online-endpoint update -n ${{secrets.ENDPOINT_NAME }} --traffic "$PROD_DEPLOYMENT=50 ${{env.RC_DEPLOYMENT_NAME}}=50"
 
   rollout_100pct_traffic:
     needs: [validate_errors_within_threshold_50pct_traffic, validate_latency_within_threshold_50pct_traffic]
