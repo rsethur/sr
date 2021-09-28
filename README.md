@@ -9,7 +9,7 @@ This repo shows how you can automate the rollout of a new version of a model int
 
 The below illustration shows how users can gradually upgrade to version n+1 of the model from the currently running version n. At everystep it is a good practice to validate that operational metrics are all within threshold (e.g. response time tail latencies , #errors etc).
 
-![Saferollout semantics](docs/imgs/saferollout-semantics.png)
+![Saferollout semantics](docs/imgs/saferollout-semantics.jpg)
 
 ## Pipeline design
 In the example here you will see the flow from training -> model registration -> saferollout of new model version into production. You will see how we use [validate metrics](https://github.com/rsethur/validate-metrics) github action to automate the validation of operational metrics at very step of the rollout.
