@@ -409,8 +409,7 @@ jobs:
       - name: "Open live traffic"
         run: |
           export ENDPOINT_EXISTS=$(az ml online-endpoint list -o tsv --query "[?name=='${{secrets.ENDPOINT_NAME }}'][name]" |  wc -l)
-          if [[ ENDPOINT_EXISTS -ne 1 ]]; then echo "Endpoint does not exist. Maybe initial run?"; exit 0; fi            
-          az ml online-endpoint create -n ${{secrets.ENDPOINT_NAME }} -f ${{ env.ENDPOINT_FILE }}      
+          if [[ ENDPOINT_EXISTS -ne 1 ]]; then echo "Endpoint does not exist. Maybe initial run?"; exit 0; fi          
           ENDPOINT_URI=$(az ml online-endpoint show -n ${{secrets.ENDPOINT_NAME}} -o tsv --query scoring_uri)        
           echo $ENDPOINT_URI
           ENDPOINT_TOKEN=$(az ml online-endpoint get-credentials -n ${{secrets.ENDPOINT_NAME}} -o tsv --query primaryKey)
