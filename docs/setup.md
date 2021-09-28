@@ -32,8 +32,18 @@ This will create the following resources:
 3. Training cpu-cluster
 4. A sample dataset for training
 
-## Step 5: Create environments in github
-todo
+## [Optional] Step 5: Create environments in github
+
+This will add 5 delays after rollout of incremental traffic inorder to validate the metrics for that time period.
+
+[Create the following Environments](https://docs.github.com/en/actions/deployment/environments#creating-an-environment):
+1. rollout_50pct_traffic_env
+1. rollout_100pct_traffic_env
+1. delete_old_prod_env
+
+In all the above environments, configure delay timer as `5` mins.
+
+__Known issue:__ The delay specified in the Environment protection rules does not seem to be honoured - let me know if you figure this out (create an issue in this repo).
 
 ## Get started!
 Now you are all set! Go to the [getting started](getting-started.md) to try out the mlops pipelines
