@@ -84,13 +84,30 @@ jobs:
       run: |          
         az ml online-deployment create --name ${{ env.RC_DEPLOYMENT_NAME }} --endpoint ${{secrets.ENDPOINT_NAME }} -f ${{ env.DEPLOYMENT_FILE }} --all-traffic --set model=${{ env.LATEST_MODEL }}
 
-    - name: Step 3-Sanity test RC with zero traffic
-      if: ${{ env.NOT_FIRST_RUN }}
+  sanity_test_0pct_traffic:
+    needs: [create_rc_deployment]    
+    name: Sanity test without live traffic
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2.3.3
+    - name: azure login
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+    - name: Set defaults
+      run: |
+        az config set defaults.workspace=${{secrets.AML_WORKSPACE}}
+        az config set defaults.group=${{secrets.RESOURCE_GROUP}}
+        az account set -s ${{secrets.SUBSCRIPTION_ID}}  
+    - name: Install azureml cli extension
+      run: az extension add --source https://azuremlsdktestpypi.blob.core.windows.net/wheels/sdk-cli-v2/ml-0.0.15_october_cand-py3-none-any.whl --yes
+    - name: Step 3-Sanity test RC with zero traffic      
       run: |          
         az ml online-endpoint invoke -n ${{secrets.ENDPOINT_NAME }} --deployment ${{ env.RC_DEPLOYMENT_NAME }} --request-file endpoint/sample-request.json
 
   rollout_10pct_traffic:
-    needs: [create_rc_deployment]
+    needs: [sanity_test_0pct_traffic]
     if: ${{ needs.create_rc_deployment.outputs.NOT_FIRST_RUN }}
     name: Rollout 10% traffic
     runs-on: ubuntu-latest
@@ -188,8 +205,7 @@ jobs:
   validate_errors_within_threshold_10pct_traffic:
     needs: rollout_10pct_traffic
     name: Validate errors within threshold @ 10% traffic
-    environment:
-      name: auto_rollout_50pct_traffic
+    environment: auto_rollout_50pct_traffic
     runs-on: ubuntu-latest
     steps:
       - run: |
@@ -221,8 +237,7 @@ jobs:
   validate_errors_within_threshold_50pct_traffic:
     needs: rollout_50pct_traffic
     name: Validate errors within threshold @ 50% traffic
-    environment:
-      name: auto_rollout_100pct_traffic
+    environment: auto_rollout_100pct_traffic
     runs-on: ubuntu-latest
     steps:
       - run: |
@@ -254,8 +269,7 @@ jobs:
   validate_errors_within_threshold_100pct_traffic:
     needs: rollout_100pct_traffic
     name: Validate errors within threshold @ 100% traffic
-    environment:
-      name: auto_delete_old_prod
+    environment: delete_old_prod_env
     runs-on: ubuntu-latest
     steps:
       - run: |
@@ -287,8 +301,7 @@ jobs:
 
   validate_latency_within_threshold_10pct_traffic:
     needs: rollout_10pct_traffic
-    environment:
-      name: auto_rollout_50pct_traffic
+    environment: rollout_50pct_traffic_env
     name: Validate latency within threshold @ 10% traffic
     runs-on: ubuntu-latest
     steps:
@@ -321,7 +334,7 @@ jobs:
   validate_latency_within_threshold_50pct_traffic:
     needs: rollout_50pct_traffic
     environment:
-      name: auto_rollout_100pct_traffic
+      name: rollout_100pct_traffic_env
     name: Validate latency within threshold @ 50% traffic
     runs-on: ubuntu-latest
     steps:
