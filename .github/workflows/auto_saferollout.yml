@@ -8,7 +8,7 @@ on:
 env:
   RC_DEPLOYMENT_NAME: run${{ github.run_number }}
   METRICS_VALIDATION_INTERVAL_MINS: 5
-  LOAD_GENERATOR_DURATION: 70m #minutes
+  LOAD_GENERATOR_DURATION: 30m
   
 jobs:
   
@@ -55,7 +55,7 @@ jobs:
         if [[ ENDPOINT_EXISTS -ne 1 ]]; then
           az ml online-endpoint create -n ${{secrets.ENDPOINT_NAME }} -f ${{ env.ENDPOINT_FILE }}          
         else
-          echo "endpoint ${{secrets.ENDPOINT_NAME }} exists"
+          echo "endpoint exists"
         fi
     
     # Step 1b - If prod does not exist, create the RC as prod. Else If PROD exists validate if it has 100%.
@@ -70,10 +70,7 @@ jobs:
           echo "prod deployment does not exist - creating it"
           export PROD_DEPLOYMENT=${{ env.RC_DEPLOYMENT_NAME }}
           az ml online-deployment create --name ${{ env.RC_DEPLOYMENT_NAME }} --endpoint ${{secrets.ENDPOINT_NAME }} -f ${{ env.DEPLOYMENT_FILE }} --all-traffic --set model=${{ env.LATEST_MODEL }}
-          az ml online-endpoint update --name ${{secrets.ENDPOINT_NAME }} --set tags.PROD_DEPLOYMENT=$PROD_DEPLOYMENT          
-          echo "It is expected to fail in the first run since we want to stop after deployment creation as there is no saferollout (since github action does not allow with exit 0)"          
-          # github action does not allow with exit 0.
-          #exit 1
+          az ml online-endpoint update --name ${{secrets.ENDPOINT_NAME }} --set tags.PROD_DEPLOYMENT=$PROD_DEPLOYMENT                    
         else # validate if PROD  has 100%.
           echo "validating if prod as 100%"
           export PROD_TRAFFIC=$(az ml online-endpoint show -n ${{secrets.ENDPOINT_NAME }} -o tsv --query traffic.$PROD_DEPLOYMENT)
@@ -411,10 +408,13 @@ jobs:
           tar -xvf vegeta_12.8.4_linux_amd64.tar.gz
       - name: "Open live traffic"
         run: |
+          export ENDPOINT_EXISTS=$(az ml online-endpoint list -o tsv --query "[?name=='${{secrets.ENDPOINT_NAME }}'][name]" |  wc -l)
+          if [[ ENDPOINT_EXISTS -ne 1 ]]; then echo "Endpoint does not exist. Maybe initial run?"; exit 0; fi            
+          az ml online-endpoint create -n ${{secrets.ENDPOINT_NAME }} -f ${{ env.ENDPOINT_FILE }}      
           ENDPOINT_URI=$(az ml online-endpoint show -n ${{secrets.ENDPOINT_NAME}} -o tsv --query scoring_uri)        
           echo $ENDPOINT_URI
           ENDPOINT_TOKEN=$(az ml online-endpoint get-credentials -n ${{secrets.ENDPOINT_NAME}} -o tsv --query primaryKey)
-          echo "POST $ENDPOINT_URI" | ./vegeta attack -body endpoint/sample-request.json -header "Content-Type: application/json" -header "authorization: Bearer $ENDPOINT_TOKEN" -rate=15 -duration ${{env.LOAD_GENERATOR_DURATION}} | vegeta report --type=text > traffic_report.txt
+          echo "POST $ENDPOINT_URI" | ./vegeta attack -body endpoint/sample-request.json -header "Content-Type: application/json" -header "authorization: Bearer $ENDPOINT_TOKEN" -rate=15 -duration ${{env.LOAD_GENERATOR_DURATION}} | ./vegeta report --type=text > traffic_report.txt
           cat traffic_report.txt
       - uses: actions/upload-artifact@v2
         with:
