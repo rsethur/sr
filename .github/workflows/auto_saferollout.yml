@@ -430,5 +430,5 @@ jobs:
           cat traffic_report.txt
       - uses: actions/upload-artifact@v2
         with:
-          name: traffic-report
+          name: load-generator-traffic-report
           path: "traffic_report.txt"
