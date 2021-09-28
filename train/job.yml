@@ -5,7 +5,8 @@ command: >-
   python train.py 
   --dataset ${{inputs.credit_dataset}}
 inputs:
-  credit_dataset: azureml:credit-dataset:1
+  credit_dataset:
+    dataset: azureml:credit-dataset:1
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu
 compute: azureml:cpu-cluster
 display_name: risk-model-job

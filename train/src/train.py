@@ -15,18 +15,16 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import StandardScaler
 
-def main():
-
-    #dataset_filename = os.environ.get("DATASET_FILE_NAME", )
-    credit_data_df = pd.read_csv("dataset/german_credit_data.csv")   
-
+def main(args):
+    
+    credit_data_df = pd.read_csv(args.dataset)   
     clf = model_train(credit_data_df)
 
     #copying to "outputs" directory, automatically uploads it to azure ml
-    output_dir = './outputs/'
-    model_name = "risk_model.joblib"
-    os.makedirs(output_dir, exist_ok=True)
-    joblib.dump(value=clf, filename=output_dir+model_name)
+    OUTPUT_DIR = './outputs/'
+    MODEL_NAME = "risk_model.joblib"
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    joblib.dump(value=clf, filename=OUTPUT_DIR+MODEL_NAME)
 
 
 def model_train(credit_data_df):
@@ -75,5 +73,19 @@ def model_train(credit_data_df):
 
     return lr_clf
 
+def parse_args():
+    # setup arg parser
+    parser = argparse.ArgumentParser()
+
+    # add arguments
+    parser.add_argument("--dataset", type=str)
+    # parse args
+    args = parser.parse_args()
+
+    # return args
+    return args
+
+
 if __name__ == "__main__":
-    main()
+    args = parse_args()
+    main(args)

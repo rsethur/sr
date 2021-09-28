@@ -16,7 +16,7 @@ def main(args):
     # read in data
     print("ds:",args.dataset)
     mlflow.log_param("###dataset", args.dataset)
-    df = pd.read_csv(args.cdataset)
+    df = pd.read_csv(args.dataset)
 
 
     print("########### ", df)

@@ -1,7 +1,5 @@
 # Setup and run MLOps pipelines from this repo
 
-## Prerequisite
-
 ## Step 1: Fork this repo
 You can [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository) from github.com.
 
@@ -13,7 +11,7 @@ Secret | Description/Instructions |
 |------|------------|
 |SUBSCRIPTION_ID | Your azure subscription id |
 |RESOURCE_GROUP | Resource group where your resources will be created. Make sure this already exists |
-| AML_WORKSPACE | Name of your azure ml workspace. If it does not already exist, a new one will be created. e.g. mlops |
+| AML_WORKSPACE | Name of your azure ml workspace. Make sure this already exists. |
 | LOCATION | Azure region for your Azure ML workspace  e.g. eastus |
 | LA_WORKSPACE | Name of your azure ml workspace. If it does not already exist, a new one will be created. e.g. mlops-la-ws. **Note** that underscore is not allowed in the name. |
 | LA_LOCATION | Azure region for your log analytics workspace  e.g. eastus. Ideally same as `LOCATION`. This is a seperate variable than `LOCATION` because log analytics is not avaialble in all regions. |
