@@ -9,6 +9,8 @@ env:
   RC_DEPLOYMENT_NAME: run${{ github.run_number }}
   METRICS_VALIDATION_INTERVAL_MINS: 5
   LOAD_GENERATOR_DURATION: 30m
+  ENDPOINT_FILE: endpoint/endpoint.yml
+  DEPLOYMENT_FILE: endpoint/deployment.yml
   
 jobs:
   
@@ -18,11 +20,7 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch'}}
     outputs:
       NOT_FIRST_RUN: ${{ steps.create_initial_prod.outputs.NOT_FIRST_RUN }}
-    steps:
-    - name: Configure endpoint files
-      run: |
-        echo "ENDPOINT_FILE=endpoint/endpoint.yml" >> $GITHUB_ENV
-        echo "DEPLOYMENT_FILE=endpoint/deployment.yml" >> $GITHUB_ENV
+    steps:    
     - name: Checkout
       uses: actions/checkout@v2.3.3
     - name: azure login
