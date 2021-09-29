@@ -33,7 +33,7 @@ This will create the following resources:
 3. Training cpu-cluster
 4. A sample dataset for training
 
-## [Optional] Step 5: Create environments in github
+## [Optional] Step 5: Create environments in github (aka release gates)
 
 This will add 5 delays after rollout of incremental traffic inorder to validate the metrics for that time period.
 
