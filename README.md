@@ -13,7 +13,7 @@ The below illustration shows how users can gradually upgrade to version n+1 of t
 
 ![Saferollout semantics](docs/imgs/saferollout-semantics.jpg)
 
-## Pipeline design
+## Design of saferollout pipeline
 In the example here you will see the flow from training -> model registration -> saferollout of new model version into production. You will see how we use [validate metrics](https://github.com/rsethur/validate-metrics) github action to automate the validation of operational metrics at very step of the rollout.
 
 ![Saferollout pipeline design](docs/imgs/pipeline-design.png)
