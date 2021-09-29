@@ -25,5 +25,5 @@ jobs:
     - name: Run the rollout shell script
       run: bash -ex scripts/simple_rollout.sh
       env:
-        ENDPOINT_NAME: simple_${{secrets.ENDPOINT_NAME }}
+        ENDPOINT_NAME: simple-${{secrets.ENDPOINT_NAME }}
         
