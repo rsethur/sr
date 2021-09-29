@@ -8,6 +8,6 @@
 ## Understanding the scripts
 
 1. Prerequsite: Make sure you understand basic of managed online endpoints: [concept](https://docs.microsoft.com/en-us/azure/machine-learning/concept-endpoints), [simple deployment flow](http://docs.microsoft.com/en-us/azure/machine-learning/how-to-deploy-managed-online-endpoints) and [safe rollout](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-safely-rollout-managed-endpoints)
-1. Understand the [simple shell script based rollout](../../tree/master/scripts/rollout.sh)
+1. Understand the [simple shell script based rollout](../../../tree/master/scripts/rollout.sh)
 1. Good to understand the [validate-metrics github action](https://github.com/rsethur/validate-metrics) that is used here
 1. Understand the [auto saferollout github action](.github/workflows/auto_saferollout.yml)
