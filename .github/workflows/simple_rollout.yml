@@ -3,7 +3,7 @@ on:
   workflow_dispatch
 
 jobs:  
-  train:
+  simple-rollout:
     runs-on: ubuntu-latest
     steps:
     - name: azure login

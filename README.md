@@ -1,3 +1,5 @@
+![Simple rollout](https://github.com/rsethur/sr/workflows/simple-rollout/badge.svg)
+![Auto safe rollout](https://github.com/rsethur/sr/workflows/auto-saferollout-test/badge.svg)
 # Safe rollout of ML models using Azure ML Managed Online Endpoints
 
 ## User story
