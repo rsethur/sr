@@ -1,6 +1,3 @@
-#Endpoint name has to be unique at region level
-ENDPOINT_NAME=test-endpt-521
-
 # Generate name for new release candidate (RC) deployment.
 export RC_DEPLOYMENT_NAME=deploy-`echo $RANDOM`
 
