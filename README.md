@@ -19,7 +19,7 @@ In the example here you will see the flow from training -> model registration ->
 ![Saferollout pipeline design](docs/imgs/pipeline-design.png)
 
 ## Getting started
-Just fork this repo and [get started](docs/getting-started.md)
+Just fork this repo and [follow instructions](docs/getting-started.md) to get started.
 
 ## References
 1. [Validate metrics](https://github.com/rsethur/validate-metrics) github action
