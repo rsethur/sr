@@ -6,7 +6,7 @@
 1. You can keep running with the `train` or the `auto-saferollout` actions to rollout new versions. You can also configure this to run on a schedule.
 
 ## Understanding the scripts
-If you did not already, checkout [output of the above actions](../../actions): you will see the pipleine graph with various steps.
+If you did not already, checkout [output of the above actions](../../../../actions): you will see the pipleine graph with various steps.
 1. Prerequsite: Make sure you understand basic of managed online endpoints: [concept](https://docs.microsoft.com/en-us/azure/machine-learning/concept-endpoints), [simple deployment flow](http://docs.microsoft.com/en-us/azure/machine-learning/how-to-deploy-managed-online-endpoints) and [safe rollout](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-safely-rollout-managed-endpoints)
 1. Understand the [simple shell script based rollout](../scripts/simple_rollout.sh)
 1. Good to understand the [validate-metrics github action](https://github.com/rsethur/validate-metrics) that is used here
