@@ -20,7 +20,11 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch'}}
     outputs:
       NOT_FIRST_RUN: ${{ steps.create_initial_prod.outputs.NOT_FIRST_RUN }}
-    steps:    
+    steps:
+    - name: aa
+      run: |
+        ENAME = ${{secrets.ENDPOINT_NAME}} 
+        echo ########## len ${#ENAME}
     - name: Checkout
       uses: actions/checkout@v2.3.3
     - name: azure login

@@ -16,7 +16,7 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import StandardScaler
 
 def main(args):
-    
+    print("#####", args.dataset)
     credit_data_df = pd.read_csv(args.dataset)   
     clf = model_train(credit_data_df)
 
