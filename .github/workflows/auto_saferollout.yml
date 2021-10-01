@@ -24,7 +24,7 @@ jobs:
     - name: aa
       run: |
         ENAME=${{secrets.ENDPOINT_NAME}} 
-        echo ########## len ${#ENAME}
+        echo len ${#ENAME}
     - name: Checkout
       uses: actions/checkout@v2.3.3
     - name: azure login
